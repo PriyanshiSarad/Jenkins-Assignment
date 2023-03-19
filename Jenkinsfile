@@ -14,7 +14,7 @@ pipeline{
 	stages{
 	    stage("Fetch code from GitHub Repo"){
 	        steps{
-	            git branch:'master', url:'https://github.com/ravdy/hello-world.git'
+	            git branch:'master', url:'https://github.com/PriyanshiSarad/Jenkins-Assignment.git'
 	        }
 	    }
 	    stage("Build using Maven"){
