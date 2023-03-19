@@ -7,7 +7,7 @@ pipeline{
 	environment{
 		APPLICATION_NAME = 'Jenkins-Java-App'
 		ENV_NAME = 'Java-env-Prod'
-		VERSION_LABEL = 'jenkins-java-app-source'
+		VERSION_LABEL = "${BUILD_ID}"
 		BUCKET_NAME = 'java-artifacts-0101'
 		ARTIFACT_NAME = 'ROOT.war'
 	}
