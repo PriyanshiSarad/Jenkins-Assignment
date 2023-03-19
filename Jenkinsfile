@@ -29,13 +29,9 @@ pipeline{
 	    }
 	    post{
 	    	success{
-	    		stage("Deploy to Elastic Beanstalk"){
-	    			steps{
-	    				withAWS(credentials: 'awsCredentials', region: 'us-east-1'){
+	    		withAWS(credentials: 'awsCredentials', region: 'us-east-1'){
                              sh 'aws s3 cp ./webapp/target/webapp.war s3://java-artifacts-0101/ROOT.war'
 	    		       }
-	    			}
-	    		}
 	    	}
 	    }
 	    
