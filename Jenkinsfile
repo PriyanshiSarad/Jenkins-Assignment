@@ -33,7 +33,7 @@ pipeline{
 	    		withAWS(credentials: 'awsCredentials', region: 'us-east-1'){
                     sh 'aws s3 cp ./webapp/target/webapp.war s3://java-artifacts-0101/ROOT.war'
                     sh 'aws elasticbeanstalk create-application-version --application-name ${APPLICATION_NAME} --version-label ${VERSION_LABEL} --source-bundle S3Bucket=${BUCKET_NAME},S3Key=${ARTIFACT_NAME} '
-                    sh 'update-environment --application-name ${APPLICATION_NAME} --environment-name ${ENV_NAME} --version-label ${VERSION_LABEL} '
+                    sh 'aws elasticbeanstalk update-environment --application-name ${APPLICATION_NAME} --environment-name ${ENV_NAME} --version-label ${VERSION_LABEL} '
 	           }
 	    	}
 	    }	    
